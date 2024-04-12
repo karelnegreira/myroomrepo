@@ -94,7 +94,9 @@ const Modal: React.FC<ModalProps> = ({
                                 focus:outline-none
                         ">
                             {/*Header */}
-
+                            <div className="flex items-center p-6 rounded-t justify-center relative border-b-[1px]">
+                                
+                            </div>
                         </div>
 
                 </div>
