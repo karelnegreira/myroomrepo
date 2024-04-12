@@ -4,6 +4,7 @@ import { Nunito } from "next/font/google";
 
 import Modal from "./component/modals/Modal";
 import Navbar from "./component/navbar/navbar";
+import { IoAdd } from "react-icons/io5";
 
 const font = Nunito({ subsets: ["latin"] });
 
