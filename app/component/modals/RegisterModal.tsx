@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import axios from 'axios';
 import { AiFillGithub } from 'react-icons/ai';
@@ -26,7 +26,7 @@ const RegisterModal = () => {
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
         setIsLoading(true);
 
-        axios.post(`/api/register`, data)
+        axios.post('/api/register', data)
             .then(() => {
                 registerModal.onClose();
             })
@@ -37,8 +37,6 @@ const RegisterModal = () => {
                 setIsLoading(false);
             })
     }
-
-
 
   return (
     <Modal 
@@ -52,4 +50,4 @@ const RegisterModal = () => {
   );
 }
 
-export default RegisterModal
+export default RegisterModal;
