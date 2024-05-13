@@ -7,6 +7,7 @@ import Navbar from "./component/navbar/navbar";
 import { IoAdd } from "react-icons/io5";
 import RegisterModal from "./component/modals/RegisterModal";
 import ClientOnly from "./component/ClientOnly";
+import ToasterProvider from "./providers/ToasterProvider";
 
 const font = Nunito({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <ClientOnly>
+          <ToasterProvider />
           <RegisterModal/>
           <Navbar />
         </ClientOnly>
