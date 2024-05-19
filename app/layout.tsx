@@ -8,6 +8,7 @@ import { IoAdd } from "react-icons/io5";
 import RegisterModal from "./component/modals/RegisterModal";
 import ClientOnly from "./component/ClientOnly";
 import ToasterProvider from "./providers/ToasterProvider";
+import LoginModal from "./component/modals/LoginModal";
 
 const font = Nunito({ subsets: ["latin"] });
 
@@ -26,8 +27,9 @@ export default function RootLayout({
       <body className={font.className}>
         <ClientOnly>
           <ToasterProvider />
-          <RegisterModal/>
-          <Navbar />
+            <LoginModal />
+            <RegisterModal/>
+            <Navbar />
         </ClientOnly>
         {children}
         </body>
