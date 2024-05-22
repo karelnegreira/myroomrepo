@@ -4,6 +4,7 @@ import { TbBeach } from "react-icons/tb";
 import Container from "../Container";
 import { GiWindmill } from "react-icons/gi";
 import { MdOutlineVilla } from "react-icons/md";
+import CategoryBox from "../CategoryBox";
 
 export const categories = [
     {
