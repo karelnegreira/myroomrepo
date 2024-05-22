@@ -10,6 +10,7 @@ import { SafeUser } from "@/app/types";
 import { signOut } from "next-auth/react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useCallback, useState } from "react";
+import useRentModal from "@/app/hooks/useRentModal";
 
 interface UserMenuProps {
     currentUser?: SafeUser | null;
@@ -19,6 +20,7 @@ const UserMenu: React.FC<UserMenuProps> = ({currentUser}) => {
 
     const registerModal = useRegisterModal();
     const loginModal = useLoginModal();
+    const rentModal = useRentModal();
     const [isOpen, setIsOpen] = useState(false);
     
     const toggleOpen = useCallback(() => {
@@ -30,9 +32,9 @@ const UserMenu: React.FC<UserMenuProps> = ({currentUser}) => {
             return loginModal.onOpen();
         }
 
-        //open  rent modal
+        rentModal.onOpen();
 
-    }, [currentUser, loginModal])
+    }, [currentUser, loginModal, rentModal])
 
   return (
     <div className="relative">
@@ -69,7 +71,7 @@ const UserMenu: React.FC<UserMenuProps> = ({currentUser}) => {
                             <MenuItem onClick={() => {}} label="My favorites" />
                             <MenuItem onClick={() => {}} label="My reservations" />
                             <MenuItem onClick={() => {}} label="My properties" />
-                            <MenuItem onClick={() => {}} label="MyRoom my home" />
+                            <MenuItem onClick={onRent} label="MyRoom my home" />
                             <hr/>
                             <MenuItem onClick={() => signOut()} label="Logout" />
                         </>
