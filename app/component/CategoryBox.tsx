@@ -9,7 +9,7 @@ interface CategoryBoxProps {
 }
 
 const CategoryBox: React.FC<CategoryBoxProps> = ({
-    icon, 
+    icon: Icon, 
     label, 
     selected
 }) => {
@@ -27,9 +27,9 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
             cursor-pointer
             ${selected ? 'border-b-neutral-800': 'border-transparent'}
             ${selected ? 'text-neutral-800' : 'text-neutral-500'}
-            
             `
         }>
+            <Icon size={30} />
 
     </div>
   )
