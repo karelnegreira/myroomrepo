@@ -8,6 +8,7 @@ import CategoryInput from "../inputs/CategoryInput";
 
 import { FieldValues, useForm } from "react-hook-form";
 import { useMemo, useState } from "react";
+import CountrySelect from "../inputs/CountrySelect";
 
 enum STEPS {
     CATEGORY = 0, 
@@ -117,6 +118,9 @@ const RentModal = () => {
                 <Heading 
                     title="Where is your place located?"
                     subtitle="Help guests find you!"
+                />
+                <CountrySelect 
+
                 />
             </div>
         )
