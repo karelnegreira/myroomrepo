@@ -35,12 +35,26 @@ const CountrySelect: React.FC<CountrySelectProps> = ({value, onChange}) => {
                     </div>
                     <div>
                          {option.label}, 
-                         <span className="text-neutral-800 ml-1">
+                         <span className="text-neutral-500 ml-1">
                             {option.region}
                         </span>   
                     </div>
                 </div>
             )}
+            className={{
+                control: () => 'p-3 border-2', 
+                input: () => 'text-lg', 
+                option: () => 'text-lg'
+            }}
+            theme={(theme) => ({
+                ...theme, 
+                borderRadius: 6, 
+                colors: {
+                    ...theme.colors, 
+                    primary: 'brack', 
+                    primary25: '#ffe4e6'
+                }
+            })}
         />
     </div>
   )
