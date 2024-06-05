@@ -150,6 +150,20 @@ const RentModal = () => {
                     value={guestsCount}
                     onChange={(value) => setCustomValue('guestsCount', value)}
                 />
+                <hr />
+                <Counter
+                    title="Rooms"
+                    subtitle="How many rooms do you have?"
+                    value={guestsCount}
+                    onChange={(value) => setCustomValue('guestsCount', value)}
+                />
+                <hr />
+                <Counter
+                    title="Bathrooms"
+                    subtitle="How many guests do you have?"
+                    value={guestsCount}
+                    onChange={(value) => setCustomValue('guestsCount', value)}
+                />
             </div>
         )
     }
