@@ -11,6 +11,7 @@ import { useMemo, useState } from "react";
 import CountrySelect from "../inputs/CountrySelect";
 import dynamic from "next/dynamic";
 import Counter from "../inputs/Counter";
+import ImageUploads from "../inputs/ImageUploads";
 
 
 enum STEPS {
@@ -177,7 +178,7 @@ const RentModal = () => {
                     title="Add a photo of your place"
                     subtitle="Show guests what your place look like"
                 />
-                
+                <ImageUploads />
             </div>
         )
     }
