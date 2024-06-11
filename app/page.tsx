@@ -2,11 +2,13 @@ import Image from "next/image";
 import ClientOnly from "./component/ClientOnly";
 import Container from "./component/Container";
 import EmptyState from "./component/EmptyState";
+import getListings from "./actions/getListings";
 
-export default function Home() {
+export default async function Home() {
+  const listings = await getListings();
   const isEmpty = true;
 
-  if (isEmpty) {
+  if (listings.length === 0) {
     return (
       <ClientOnly>
         <EmptyState showReset />
