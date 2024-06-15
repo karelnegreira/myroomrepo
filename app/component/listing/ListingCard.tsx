@@ -88,7 +88,11 @@ const ListingCard: React.FC<ListingCardProps> = ({
                             listingId={data.id}
                             currentUser={currentUser}
                         />
+
                     </div>
+                </div>
+                <div className="font-semibold text-lg">
+                    {location?.region}, {location?.label}
                 </div>
             </div>
         </div>
