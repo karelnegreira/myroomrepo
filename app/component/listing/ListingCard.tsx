@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { useCallback, useMemo } from "react";
 import Image from 'next/image';
 import HeartButton from '../HeartButton';
+import Button from '../Button';
 
 
 
@@ -101,7 +102,18 @@ const ListingCard: React.FC<ListingCardProps> = ({
                     <div className="font-semibold">
                         $ {price}
                     </div>
+                    {!reservation && (
+                        <div className="font-light">per night</div>
+                    )}
                 </div>
+                {onAction && actionLabel && (
+                    <Button 
+                        disabled={disabled}
+                        small
+                        label={actionLabel}
+                        onClick={handleCancel}
+                    />
+                )}
             </div>
         </div>
   )
