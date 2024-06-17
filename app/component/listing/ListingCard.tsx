@@ -98,8 +98,8 @@ const ListingCard: React.FC<ListingCardProps> = ({
                     {reservationDate || data.category}
                 </div>
                 <div className="flex flex-row items-center gap-1">
-                    <div>
-                        
+                    <div className="font-semibold">
+                        $ {price}
                     </div>
                 </div>
             </div>
