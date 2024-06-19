@@ -1,9 +1,21 @@
+import { SafeListing, SafeUser } from "@/app/types";
+import { Reservation } from "@prisma/client"
 
-
-const ListingClient = () => {
-  return (
-    <div>ListingClient</div>
-  )
+interface ListingClientProps {
+    reservations?: Reservation[];
+    listing: SafeListing & {
+        user: SafeUser
+    };
+    currentUser?: SafeUser | null;
 }
 
-export default ListingClient
+const ListingClient: React.FC<ListingClientProps> = ({
+    listing, 
+    currentUser
+}) => {
+  return (
+    <div>ListingClient</div>
+  );
+}
+
+export default ListingClient;
