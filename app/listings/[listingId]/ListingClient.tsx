@@ -1,9 +1,9 @@
 "use client";
 
 import axios from "axios";
-import { eachDayOfInterval } from "date-fns";
+import { differenceInDays, eachDayOfInterval } from "date-fns";
 import { useRouter } from "next/navigation";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 
 import Container from "@/app/component/Container";
@@ -83,6 +83,17 @@ const ListingClient: React.FC<ListingClientProps> = ({
             setIsLoading(false);
         })
     }, [totalPrice, dateRange, listing?.id, route, currentUser, loginModal]);
+
+    useEffect(() => {
+        if (dateRange.startDate && dateRange.endDate) {
+            const dayCount = differenceInDays(dateRange.endDate, dateRange.startDate);
+            if (dayCount && listing.price) {
+                setTotalPrice(dayCount * listing.price);
+            } else {
+                setTotalPrice(listing.price);
+            }
+        }
+    }, [])
 
     const category = useMemo(() => {
         return categories.find((item) => item.label === listing.category);
