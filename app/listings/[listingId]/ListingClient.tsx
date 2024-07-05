@@ -15,6 +15,7 @@ import { SafeListing, SafeUser } from "@/app/types";
 import { Reservation } from "@prisma/client"
 import toast from "react-hot-toast";
 import ListingReservation from "@/app/component/listing/ListingReservation";
+import { Range } from "react-date-range";
 
 
 
@@ -57,7 +58,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
     const [isLoading, setIsLoading] = useState(false);
     const [totalPrice, setTotalPrice] = useState(listing.price);
-    const [dateRange, setDateRange] = useState(initialDateRange);
+    const [dateRange, setDateRange] = useState<Range>(initialDateRange);
 
     const onCreateReservation = useCallback(() => {
         if (!currentUser) {
