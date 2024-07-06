@@ -70,7 +70,8 @@ const ListingClient: React.FC<ListingClientProps> = ({
         axios.post('/api/reservations', {
             totalPrice, 
             startDate: dateRange.startDate, 
-            endDate: dateRange.endDate
+            endDate: dateRange.endDate, 
+            listingId: listing?.id
         })
         .then(() => {
             toast.success('Listing reserved');
