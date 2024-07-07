@@ -11,6 +11,7 @@ import { signOut } from "next-auth/react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useCallback, useState } from "react";
 import useRentModal from "@/app/hooks/useRentModal";
+import { useRouter } from "next/navigation";
 
 interface UserMenuProps {
     currentUser?: SafeUser | null;
@@ -22,6 +23,7 @@ const UserMenu: React.FC<UserMenuProps> = ({currentUser}) => {
     const loginModal = useLoginModal();
     const rentModal = useRentModal();
     const [isOpen, setIsOpen] = useState(false);
+    const router = useRouter();
     
     const toggleOpen = useCallback(() => {
         setIsOpen((value) => !value);
@@ -67,7 +69,7 @@ const UserMenu: React.FC<UserMenuProps> = ({currentUser}) => {
                     
                     {currentUser ? (
                         <>
-                            <MenuItem onClick={() => {}} label="My trips" />
+                            <MenuItem onClick={() => router.push("/trips")} label="My trips" />
                             <MenuItem onClick={() => {}} label="My favorites" />
                             <MenuItem onClick={() => {}} label="My reservations" />
                             <MenuItem onClick={() => {}} label="My properties" />
