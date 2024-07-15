@@ -16,7 +16,7 @@ const ReservationPage = async () => {
                     subtitle="Please login"
                 />
             </ClientOnly>
-        )
+        );
     }
 
     const reservations = await getReservations({
@@ -42,6 +42,6 @@ const ReservationPage = async () => {
             />
         </ClientOnly>
     )
-}
+};
 
 export default ReservationPage;
