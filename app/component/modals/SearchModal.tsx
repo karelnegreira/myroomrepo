@@ -8,8 +8,9 @@ import dynamic from "next/dynamic";
 
 import useSearchModal from "@/app/hooks/useSearchModal";
 import Modal from "./Modal";
-import { CountrySelectValue } from "../inputs/CountrySelect";
+import CountrySelect, { CountrySelectValue } from "../inputs/CountrySelect";
 import { formatISO } from 'date-fns';
+import Heading from '../Heading';
 
 
 enum STEPS {
@@ -104,7 +105,22 @@ const SearchModal = () => {
      return 'Back';
     }, [step])
 
-    
+    let bodyContent = (
+      <div className="flex flex-col gap-8">
+        <Heading 
+          title="Where is your next trip?"
+          subtitle='Select your perfect destination'
+        />
+        <CountrySelect 
+          value={location}
+          onChange={(value) => setLocation(value as CountrySelectValue)}
+        />
+       <hr />
+       <Map center={location?.latlng} />
+      </div>
+    )
+
+
 
   return (
     <Modal 
@@ -113,6 +129,7 @@ const SearchModal = () => {
         onSubmit={searchModal.onOpen}
         title="Filters"
         actionLabel="Search"
+        body={bodyContent}
     />
   );
 }
