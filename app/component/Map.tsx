@@ -18,7 +18,7 @@ L.Icon.Default.mergeOptions({
 })
 
 interface MapProps {
-    center?: number[]
+    center?: Number[];
 }
 
 const Map: React.FC<MapProps> = ({center}) => {
