@@ -54,14 +54,12 @@ export async function DELETE(request: Request, {params}: {params: IParams}) {
 
     favoriteIds = favoriteIds.filter((id) => id !== listingId);
 
-    const user = await prisma.user.update({
+    const user = await prisma.user.deleteMany({
         where: {
             id: currentUser.id
         }, 
-        data: {
-            favoriteIds
-        }
+        
     });
 
-    
+    return NextResponse.json(user);
 }
